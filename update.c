@@ -1,8 +1,9 @@
 #include "init.h"
 
-void update()
+void update(Bullet bullets[], Enemy enemies[], int *lives, int *score)
 {
     int i;
+
     for (i = 0; i < MAX_ENEMIES; i++) {
         if (enemies[i].active) {
         enemies[i].y += enemies[i].speed;

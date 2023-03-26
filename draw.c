@@ -1,10 +1,11 @@
 #include <ncurses.h>
 #include "init.h"
 
-void draw()
+void draw(Bullet bullets[], Player player, Enemy enemies[], int score, int lives)
 {
   clear();
   int i;
+
   mvprintw(0, 0, "Score: %d", score);
   mvprintw(0, COLS - 10, "Lives: %d", lives);
 

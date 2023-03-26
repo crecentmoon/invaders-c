@@ -5,8 +5,8 @@
 #include <time.h>
 #include <ncurses.h>
 
-#define MAX_ENEMIES 20
-#define MAX_BULLETS 20
+#define MAX_ENEMIES 10
+#define MAX_BULLETS 100
 
 typedef struct {
     int x, y;
@@ -32,11 +32,11 @@ extern Bullet bullets[MAX_BULLETS];
 extern int score;
 extern int lives;
 
-void init();
-void draw();
-void update();
-void handle_input(int input);
+void init(Bullet bullets[], Enemy enemies[], Player *player);
+void draw(Bullet bullets[], Player player, Enemy enemies[], int lives, int score);
+void update(Bullet bullets[], Enemy enemies[], int *lives, int *score);
+void handle_input(int input, Bullet bullets[], Player *player);
 void spawn_enemy();
-void spawn_bullet();
+void spawn_bullet(Bullet bullets[], Player *player);
 void end_game();
 void sig_handler(int sig);

@@ -3,6 +3,8 @@
 void spawn_enemy()
 {
     int i;
+    Enemy enemies[MAX_ENEMIES];
+    
     for (i = 0; i < MAX_ENEMIES; i++) {
         if (!enemies[i].active) {
         enemies[i].x = rand() % COLS;

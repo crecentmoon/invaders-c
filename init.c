@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include "init.h"
 
-void init()
+void init(Bullet bullets[], Enemy enemies[], Player *player)
 {
   initscr();
   cbreak();
@@ -10,10 +10,10 @@ void init()
   keypad(stdscr, TRUE);
   timeout(0);
 
-  player.x = COLS / 2;
-  player.y = LINES - 2;
-  player.speed = 5;
-  snprintf(player.shape, sizeof(player.shape), "^^^");
+  player->x = COLS / 2;
+  player->y = LINES - 2;
+  player->speed = 10;
+  snprintf(player->shape, sizeof(player->shape), "^^^");
 
   int i;
   for (i = 0; i < MAX_ENEMIES; i++) {
