@@ -18,18 +18,6 @@
 # stop:
 # 	docker stop invaders-c
 
-# gccbuild:
-# 	gcc -c bullet.c -o bullet.o
-# 	gcc -c main.c -o main.o
-# 	gcc -c init.c -o init.o 
-# 	gcc -c input.c -o input.o
-# 	gcc -c update.c -o update.o
-# 	gcc -c gameover.c -o gameover.o
-# 	gcc -c draw.c -o draw.o
-# 	gcc -c enemy.c -o enemy.o
-# 	gcc -c signal.c -o signal.o
-# 	gcc init.o main.o draw.o input.o enemy.o bullet.o update.o gameover.o signal.o -o invaders -lncurses
-
 invaders: main.o init.o input.o update.o gameover.o draw.o enemy.o bullet.o signal.o
 	gcc -o invaders main.o init.o input.o update.o gameover.o draw.o enemy.o bullet.o signal.o -lncurses
  

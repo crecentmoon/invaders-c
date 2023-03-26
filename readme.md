@@ -13,5 +13,5 @@
 - Compile and run binary
 
     ```
-    cd "/Users/tsukiokayuu/Documents/GitHub/invaders-c" && gcc -o invaders main.c -lncurses && ./invaders
+    make invaders && ./invaders
     ```
